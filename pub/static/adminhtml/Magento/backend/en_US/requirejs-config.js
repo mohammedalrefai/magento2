@@ -24,77 +24,6 @@ require.config(config);
  */
 
 var config = {
-    waitSeconds: 0,
-    map: {
-        '*': {
-            'ko': 'knockoutjs/knockout',
-            'knockout': 'knockoutjs/knockout',
-            'mageUtils': 'mage/utils/main',
-            'rjsResolver': 'mage/requirejs/resolver'
-        }
-    },
-    shim: {
-        'jquery/jquery-migrate': ['jquery'],
-        'jquery/jstree/jquery.hotkeys': ['jquery'],
-        'jquery/hover-intent': ['jquery'],
-        'mage/adminhtml/backup': ['prototype'],
-        'mage/captcha': ['prototype'],
-        'mage/new-gallery': ['jquery'],
-        'mage/webapi': ['jquery'],
-        'jquery/ui': ['jquery'],
-        'MutationObserver': ['es6-collections'],
-        'matchMedia': {
-            'exports': 'mediaCheck'
-        },
-        'magnifier/magnifier': ['jquery']
-    },
-    paths: {
-        'jquery/validate': 'jquery/jquery.validate',
-        'jquery/hover-intent': 'jquery/jquery.hoverIntent',
-        'jquery/file-uploader': 'jquery/fileUploader/jquery.fileuploader',
-        'prototype': 'legacy-build.min',
-        'jquery/jquery-storageapi': 'jquery/jquery.storageapi.min',
-        'text': 'mage/requirejs/text',
-        'domReady': 'requirejs/domReady',
-        'spectrum': 'jquery/spectrum/spectrum',
-        'tinycolor': 'jquery/spectrum/tinycolor',
-        'jquery-ui-modules': 'jquery/ui-modules'
-    },
-    deps: [
-        'jquery/jquery-migrate'
-    ],
-    config: {
-        mixins: {
-            'jquery/jstree/jquery.jstree': {
-                'mage/backend/jstree-mixin': true
-            },
-            'jquery': {
-                'jquery/patches/jquery': true
-            }
-        },
-        text: {
-            'headers': {
-                'X-Requested-With': 'XMLHttpRequest'
-            }
-        }
-    }
-};
-
-require(['jquery'], function ($) {
-    'use strict';
-
-    $.noConflict();
-});
-
-require.config(config);
-})();
-(function() {
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-var config = {
     'shim': {
         'extjs/ext-tree': [
             'prototype'
@@ -194,6 +123,77 @@ require.config(config);
  */
 
 var config = {
+    waitSeconds: 0,
+    map: {
+        '*': {
+            'ko': 'knockoutjs/knockout',
+            'knockout': 'knockoutjs/knockout',
+            'mageUtils': 'mage/utils/main',
+            'rjsResolver': 'mage/requirejs/resolver'
+        }
+    },
+    shim: {
+        'jquery/jquery-migrate': ['jquery'],
+        'jquery/jstree/jquery.hotkeys': ['jquery'],
+        'jquery/hover-intent': ['jquery'],
+        'mage/adminhtml/backup': ['prototype'],
+        'mage/captcha': ['prototype'],
+        'mage/new-gallery': ['jquery'],
+        'mage/webapi': ['jquery'],
+        'jquery/ui': ['jquery'],
+        'MutationObserver': ['es6-collections'],
+        'matchMedia': {
+            'exports': 'mediaCheck'
+        },
+        'magnifier/magnifier': ['jquery']
+    },
+    paths: {
+        'jquery/validate': 'jquery/jquery.validate',
+        'jquery/hover-intent': 'jquery/jquery.hoverIntent',
+        'jquery/file-uploader': 'jquery/fileUploader/jquery.fileuploader',
+        'prototype': 'legacy-build.min',
+        'jquery/jquery-storageapi': 'jquery/jquery.storageapi.min',
+        'text': 'mage/requirejs/text',
+        'domReady': 'requirejs/domReady',
+        'spectrum': 'jquery/spectrum/spectrum',
+        'tinycolor': 'jquery/spectrum/tinycolor',
+        'jquery-ui-modules': 'jquery/ui-modules'
+    },
+    deps: [
+        'jquery/jquery-migrate'
+    ],
+    config: {
+        mixins: {
+            'jquery/jstree/jquery.jstree': {
+                'mage/backend/jstree-mixin': true
+            },
+            'jquery': {
+                'jquery/patches/jquery': true
+            }
+        },
+        text: {
+            'headers': {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        }
+    }
+};
+
+require(['jquery'], function ($) {
+    'use strict';
+
+    $.noConflict();
+});
+
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+var config = {
     map: {
         '*': {
             'mediaUploader':  'Magento_Backend/js/media-uploader'
@@ -282,7 +282,8 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            escaper: 'Magento_Security/js/escaper'
+            popupWindow:            'mage/popup-window',
+            confirmRedirect:        'Magento_Security/js/confirm-redirect'
         }
     }
 };
@@ -298,8 +299,7 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            popupWindow:            'mage/popup-window',
-            confirmRedirect:        'Magento_Security/js/confirm-redirect'
+            escaper: 'Magento_Security/js/escaper'
         }
     }
 };
@@ -531,6 +531,37 @@ require.config(config);
 var config = {
     map: {
         '*': {
+            'slick': 'Magento_PageBuilder/js/resource/slick/slick',
+            'jarallax': 'Magento_PageBuilder/js/resource/jarallax/jarallax',
+            'jarallaxVideo': 'Magento_PageBuilder/js/resource/jarallax/jarallax-video',
+            'vimeo': 'Magento_PageBuilder/js/resource/vimeo/player',
+            'vimeoWrapper': 'Magento_PageBuilder/js/resource/vimeo/vimeo-wrapper'
+        }
+    },
+    shim: {
+        'Magento_PageBuilder/js/resource/slick/slick': {
+            deps: ['jquery']
+        },
+        'Magento_PageBuilder/js/resource/jarallax/jarallax-video': {
+            deps: ['jarallax', 'vimeoWrapper']
+        },
+        'Magento_PageBuilder/js/resource/vimeo/player': {
+            exports: ['Player']
+        }
+    }
+};
+
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+var config = {
+    map: {
+        '*': {
             /* Include our Knockout Sortable wrapper */
             'pagebuilder/ko-dropzone': 'Magento_PageBuilder/js/resource/dropzone/knockout-dropzone',
 
@@ -567,37 +598,6 @@ var config = {
             'Magento_PageBuilder/js/content-type/row/appearance/default/widget': {
                 'Magento_PageBuilder/js/content-type/row/appearance/default/widget-mixin': true
             }
-        }
-    }
-};
-
-require.config(config);
-})();
-(function() {
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-var config = {
-    map: {
-        '*': {
-            'slick': 'Magento_PageBuilder/js/resource/slick/slick',
-            'jarallax': 'Magento_PageBuilder/js/resource/jarallax/jarallax',
-            'jarallaxVideo': 'Magento_PageBuilder/js/resource/jarallax/jarallax-video',
-            'vimeo': 'Magento_PageBuilder/js/resource/vimeo/player',
-            'vimeoWrapper': 'Magento_PageBuilder/js/resource/vimeo/vimeo-wrapper'
-        }
-    },
-    shim: {
-        'Magento_PageBuilder/js/resource/slick/slick': {
-            deps: ['jquery']
-        },
-        'Magento_PageBuilder/js/resource/jarallax/jarallax-video': {
-            deps: ['jarallax', 'vimeoWrapper']
-        },
-        'Magento_PageBuilder/js/resource/vimeo/player': {
-            exports: ['Player']
         }
     }
 };

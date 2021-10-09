@@ -1,10 +1,1 @@
-require(['jquery', 'jquery/ui', 'domReady!'], function ($) {
-    'use strict';
-
-    var el = $('.ddg-datepicker');
-
-    el.datepicker({
-        dateFormat: 'yy-mm-dd'
-    });
-    el.addClass('datepicker');
-});
+/var/www/html/magento2/vendor/dotmailer/dotmailer-magento2-extension/view/adminhtml/web/js/datePickerInit.js

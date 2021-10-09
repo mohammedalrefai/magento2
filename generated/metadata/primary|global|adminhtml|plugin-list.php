@@ -226,14 +226,6 @@
         'instance' => 'Magento\\WebapiSecurity\\Model\\Plugin\\CacheInvalidator',
       ),
     ),
-    'Magento\\Backend\\Model\\Url' => 
-    array (
-      'fixDefaultUrl' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\TwoFactorAuth\\Plugin\\FirstAvailableMenu',
-      ),
-    ),
     'Magento\\Authorization\\Model\\Role' => 
     array (
       'updateRoleUsersAcl' => 
@@ -2323,11 +2315,6 @@
         'sortOrder' => 10,
         'instance' => 'Magento\\PageBuilder\\Plugin\\ClearEditorConfigCache',
       ),
-      'delete_tfat_cookie' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\TwoFactorAuth\\Plugin\\DeleteCookieOnLogout',
-      ),
     ),
     'Magento\\Framework\\Api\\DataObjectHelper' => 
     array (
@@ -3759,22 +3746,6 @@
         'instance' => 'Magento\\AsynchronousOperations\\Ui\\Component\\AdminNotification\\Plugin',
       ),
     ),
-    'Magento\\User\\Block\\User\\Edit\\Tabs' => 
-    array (
-      'add_2fa_tabs' => 
-      array (
-        'sortOrder' => 1,
-        'instance' => 'Magento\\TwoFactorAuth\\Plugin\\AddTabToAdminUserEdit',
-      ),
-    ),
-    'Magento\\User\\Observer\\Backend\\ForceAdminPasswordChangeObserver' => 
-    array (
-      'avoid_2fa_recursion_on_admin_password_change' => 
-      array (
-        'sortOrder' => 1,
-        'instance' => 'Magento\\TwoFactorAuth\\Plugin\\AvoidRecursionOnPasswordChange',
-      ),
-    ),
     'Magento\\Cms\\Model\\Page\\DataProvider' => 
     array (
       'google_optimizer_cms_page_data_provider' => 
@@ -4224,17 +4195,6 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\WebapiSecurity\\Model\\Plugin\\CacheInvalidator',
-      ),
-    ),
-    'Magento\\Framework\\UrlInterface' => NULL,
-    'Magento\\Framework\\Url' => NULL,
-    'Magento\\Backend\\Model\\UrlInterface' => NULL,
-    'Magento\\Backend\\Model\\Url' => 
-    array (
-      'fixDefaultUrl' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\TwoFactorAuth\\Plugin\\FirstAvailableMenu',
       ),
     ),
     'Magento\\Authorization\\Model\\Role' => 
@@ -7097,11 +7057,6 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Security\\Model\\Plugin\\Auth',
       ),
-      'delete_tfat_cookie' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\TwoFactorAuth\\Plugin\\DeleteCookieOnLogout',
-      ),
       'pagebuilder_clear_editor_config_cache' => 
       array (
         'sortOrder' => 10,
@@ -9263,23 +9218,6 @@
         'instance' => 'Magento\\AsynchronousOperations\\Ui\\Component\\AdminNotification\\Plugin',
       ),
     ),
-    'Magento\\Backend\\Block\\Widget\\Tabs' => NULL,
-    'Magento\\User\\Block\\User\\Edit\\Tabs' => 
-    array (
-      'add_2fa_tabs' => 
-      array (
-        'sortOrder' => 1,
-        'instance' => 'Magento\\TwoFactorAuth\\Plugin\\AddTabToAdminUserEdit',
-      ),
-    ),
-    'Magento\\User\\Observer\\Backend\\ForceAdminPasswordChangeObserver' => 
-    array (
-      'avoid_2fa_recursion_on_admin_password_change' => 
-      array (
-        'sortOrder' => 1,
-        'instance' => 'Magento\\TwoFactorAuth\\Plugin\\AvoidRecursionOnPasswordChange',
-      ),
-    ),
     'Magento\\Cms\\Model\\Page\\DataProvider' => 
     array (
       'google_optimizer_cms_page_data_provider' => 
@@ -9357,6 +9295,7 @@
         'instance' => 'Vertex\\Tax\\Model\\Plugin\\CustomerDataProviderPlugin',
       ),
     ),
+    'Magento\\Backend\\Block\\Widget\\Tabs' => NULL,
     'Magento\\Backend\\Block\\Dashboard\\Grids' => 
     array (
       'yotpo_yotpo_backend_block_dashboard_grids_plugin' => 
@@ -9597,13 +9536,6 @@
       4 => 
       array (
         0 => 'webapiResourceSecurityCacheInvalidate',
-      ),
-    ),
-    'Magento\\Backend\\Model\\Url_findFirstAvailableMenu___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'fixDefaultUrl',
       ),
     ),
     'Magento\\Authorization\\Model\\Role_save___self' => 
@@ -12018,7 +11950,6 @@
       array (
         0 => 'login_as_customer_admin_logout',
         1 => 'security_admin_sessions_login',
-        2 => 'delete_tfat_cookie',
       ),
     ),
     'Magento\\Backend\\Model\\Auth_login___self' => 
@@ -13894,17 +13825,6 @@
       array (
         0 => 'afterGetMeta',
       ),
-    ),
-    'Magento\\User\\Block\\User\\Edit\\Tabs_toHtml___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'add_2fa_tabs',
-      ),
-    ),
-    'Magento\\User\\Observer\\Backend\\ForceAdminPasswordChangeObserver_execute___self' => 
-    array (
-      2 => 'avoid_2fa_recursion_on_admin_password_change',
     ),
     'Magento\\Cms\\Model\\Page\\DataProvider_prepareMeta___self' => 
     array (
